@@ -12,29 +12,29 @@ const Navbar = async () => {
                 <Link href="/">
                     <Image src="/Arrotup.png" alt="logo" width={100} height={100} />
                 </Link>
-                <div className="flex gap-4 text-black">
+                <div className="flex gap-4 text-black   mx-8">
                         {session && session?.user ? (
                             <>
                                 <Link href="/startup/create">
-                                    <span>Create</span>
+                                    <span className="sub-heading !text-black-200">Create</span>
                                 </Link>
 
                                 <button onClick={async () => {
                                     'use server';
                                     await signOut({ redirectTo: "/"});
                                 }}>
-                                    <span>Logout</span>
+                                    <span className="sub-heading !text-red-600">Logout</span>
                                 </button>
                                 
                                 <Link href={`/profile/${session?.id}`}>
-                                    <span>{session?.user?.name}</span>
+                                    <span className="sub-heading !text-black">{session?.user?.name}</span>
                                 </Link>
                             </>
                         ) : (
                             <button onClick={async () => {
                                 'use server';
                                 await signIn('github')}}>
-                                <span>Login</span>
+                                <span className='sub-heading !text-black'>LOGIN</span>
                             </button>
                         )}
                 </div>
