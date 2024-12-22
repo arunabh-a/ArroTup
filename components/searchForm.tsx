@@ -1,6 +1,6 @@
 import React from 'react'
 import Form from "next/form";
-import SearchFormReset from "@/app/components/searchFormReset";
+import SearchFormReset from "@/components/searchFormReset";
 
 
 const SearchForm = ({ query } : { query?: string }) => {
